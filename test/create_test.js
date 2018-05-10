@@ -4,7 +4,7 @@ const User = require('../src/user');
 describe('Creating records', () => {
 	it('saves a user', (done) => {
 		const quang =  new User({ 
-								name: 'Le Ba Minh Quang'
+								name: 'Quang'
 								});
 		quang.save()
 			.then(() => {
@@ -13,5 +13,5 @@ describe('Creating records', () => {
 				done();
 			});
 	});
-	
+
 });

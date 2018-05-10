@@ -14,10 +14,18 @@ describe('Reading users out of the database', () => {
 	it('finds all users with name of Quang', (done) => {
 		User.find({ name: 'Quang' })
 			.then((users) => {
-				console.log(users);
+				assert(users[0]._id.toString() === quang._id.toString());
 				done();
 			});
 
+	});
+
+	it('finds a user with a particular id', (done) => {
+		User.findOne({ _id: quang._id })
+			.then((user) => {
+				assert(user.name === 'Quang');
+				done();
+			});
 	});
 	
 });
